@@ -24,7 +24,7 @@ X_train, y_train = X_train.to(device), y_train.to(device)
 X_test, y_test = X_test.to(device), y_test.to(device)
 
 
-def train_model(X_train, y_train, X_test, y_test, num_epochs=100, learning_rate=0.01):
+def train_model(X_train, y_train, X_test, y_test, num_epochs=100, learning_rate=0.001):
     model = nn.Sequential(
         nn.Linear(1, 10),
         nn.ReLU(),
