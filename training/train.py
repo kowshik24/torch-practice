@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.optim as optim
+import matplotlib.pyplot as plt
 
 
 
@@ -8,6 +9,13 @@ X , y = torch.randn(100, 1), torch.randint(0, 2, (100,))
 
 X_train, X_test = X[:80], X[80:]
 y_train, y_test = y[:80], y[80:]
+
+# Plot the data
+
+plt.scatter(X_train, y_train, label='Training data')
+plt.scatter(X_test, y_test, label='Test data')
+plt.legend()
+plt.show()
 
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
